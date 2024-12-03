@@ -1,0 +1,168 @@
+<div id="footer" class="color-div">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="widget">
+					<h4 class="widget-title">Instagram Feed</h4>
+					<div id="beta-instagram-feed">
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="widget">
+					<h4 class="widget-title">Information</h4>
+					<div>
+						<ul>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a>
+							</li>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web
+									development</a></li>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a>
+							</li>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a>
+							</li>
+							<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="col-sm-10">
+					<div class="widget">
+						<h4 class="widget-title">Contact Us</h4>
+						<div>
+							<div class="contact-info">
+								<i class="fa fa-map-marker"></i>
+								<p>30 South Park Avenue San Francisco, CA 94108 Phone: +78 123 456 78</p>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia
+									consequuntur magni dolores eos qui ratione.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="widget">
+					<h4 class="widget-title">Newsletter Subscribe</h4>
+					<form action="#" method="post">
+						<input type="email" name="your_email">
+						<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
+					</form>
+				</div>
+			</div>
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+</div> <!-- #footer -->
+
+
+<style>
+	/* Footer styles */
+#footer {
+    background-color: #f8f8f8; /* Light background for footer */
+    padding: 30px 0;
+    border-top: 1px solid #ddd; /* Optional: Add a border to separate footer */
+}
+
+#footer .container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Adjust row and column layout for footer widgets */
+#footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Space between columns */
+    justify-content: space-between;
+}
+
+/* Ensure each widget takes up appropriate space */
+#footer .col-sm-3, #footer .col-sm-2, #footer .col-sm-4 {
+    flex: 1;
+    min-width: 250px; /* Ensure the columns do not shrink too much */
+}
+
+/* Widget Title Style */
+.widget-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Styling the Instagram Feed (make it responsive) */
+#beta-instagram-feed {
+    max-width: 100%;
+    height: auto;
+    background-color: #e0e0e0; /* Light background color for the feed section */
+    padding: 10px;
+}
+
+/* Styling for the "Information" section (links) */
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget ul li a {
+    color: #333;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.widget ul li a:hover {
+    color: #e74c3c; /* Change link color on hover */
+}
+
+/* Contact Information Section */
+.contact-info {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-info i {
+    color: #3498db;
+    margin-right: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Newsletter Section */
+.widget form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.widget input[type="email"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.widget button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.widget button:hover {
+    background-color: #2980b9;
+}
+
+</style>

@@ -1,0 +1,212 @@
+<div class="container">
+    <div id="content" class="space-top-none">
+        <div class="main-content">
+            <div class="space60">&nbsp;</div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="beta-products-list">
+                        <h4>New Products</h4>
+                        <div class="beta-products-details">
+                            <p class="pull-left">{{newestProducts.length}} styles found</p>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row">
+                            {{#each newestProducts}}
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    {{#if this.promotion_price}}
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
+                                    {{/if}}
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="assets/dest/images/product/{{this.image}}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">{{this.name}}</p>
+                                        <p class="single-item-price">
+                                            {{#if this.promotion_price}}
+                                            <span class="flash-del">${{this.unit_price}}</span>
+                                            <span class="flash-sale">${{this.promotion_price}}</span>
+                                            {{else}}
+                                            <span>${{this.unit_price}}</span>
+                                            {{/if}}
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
+                                                class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div> <!-- .beta-products-list -->
+
+                    <div class="space50">&nbsp;</div>
+
+                    <div class="beta-products-list">
+                        <h4>Products</h4>
+                        <div class="beta-products-details">
+                            <p class="pull-left">{{products.length}} styles found</p>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row">
+                            {{#each products}}
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    {{#if this.promotion_price}}
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
+                                    {{/if}}
+                                    <div class="single-item-header">
+                                        <a href="product.html"><img src="assets/dest/images/product/{{this.image}}"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">{{this.name}}</p>
+                                        <p class="single-item-price">
+                                            {{#if this.promotion_price}}
+                                            <span class="flash-del">${{this.unit_price}}</span>
+                                            <span class="flash-sale">${{this.promotion_price}}</span>
+                                            {{else}}
+                                            <span>${{this.unit_price}}</span>
+                                            {{/if}}
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
+                                                class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="product.html">Details <i
+                                                class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        <div class="pagination">
+                            {{#if (gt currentPage 1)}}
+                            <a href="?page={{subtract currentPage 1}}">&laquo; Previous</a>
+                            {{/if}}
+
+                            {{#each (range 1 totalPages)}}
+                            <a href="?page={{this}}" class="{{#if (eq this ../currentPage)}}active{{/if}}">{{this}}</a>
+                            {{/each}}
+
+                            {{#if (lt currentPage totalPages)}}
+                            <a href="?page={{add currentPage 1}}">Next &raquo;</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end section with sidebar and main content -->
+
+
+        </div> <!-- .main-content -->
+    </div> <!-- #content -->
+</div> <!-- .container -->
+
+
+<style>
+    /* Ensure the product items are aligned in a grid with a consistent size */
+    .beta-products-list .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .beta-products-list .col-sm-3 {
+        flex: 1 1 22%;
+        /* Adjusts to 4 items per row */
+        box-sizing: border-box;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .single-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        height: 100%;
+    }
+
+    /* To keep images uniform */
+    .single-item-header img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Styling for the product name */
+    .single-item-body .single-item-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Adjust product price */
+    .single-item-body .single-item-price {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust caption buttons */
+    .single-item-caption {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Pagination styling */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pagination a {
+        padding: 5px 10px;
+        margin: 0 5px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        color: #333;
+        border-radius: 3px;
+    }
+
+    .pagination .active {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    /* For smaller screens (mobile devices) */
+    @media (max-width: 768px) {
+        .beta-products-list .col-sm-3 {
+            flex: 1 1 48%;
+            /* 2 items per row */
+        }
+    }
+
+    /* For very small screens (small mobile devices) */
+    @media (max-width: 480px) {
+        .beta-products-list .col-sm-3 {
+            flex: 1 1 100%;
+            /* 1 item per row */
+        }
+    }
+</style>

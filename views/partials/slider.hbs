@@ -1,0 +1,29 @@
+<div class="rev-slider">
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthbanner">
+            <div class="bannercontainer">
+                <div class="banner">
+                    <div class="banner">
+                        <ul>
+                            {{#each slides}}
+                            <li data-transition="boxfade" data-slotamount="4" class="active-revslide slide"
+                                style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
+                                <div class="slotholder" style="width:100%;height:100%;">
+                                    <div class="tp-bgimg defaultimg" data-bgfit="cover" data-bgposition="center center"
+                                        data-bgrepeat="no-repeat" src="assets/dest/images/slide/{{this.image}}"
+                                        data-src="assets/dest/images/slide/{{this.image}}"
+                                        style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('assets/dest/images/slide/{{this.image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+    <!--slider-->
+</div>
